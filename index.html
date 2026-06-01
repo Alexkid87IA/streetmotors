@@ -804,6 +804,92 @@ h1, h2, h3 { text-wrap: balance; }
   margin: 0 auto;
 }
 
+/* ---- FOUNDER ---- */
+
+.founder-section {
+  background: var(--black-2);
+  border-top: 1px solid var(--white-05);
+  position: relative;
+  overflow: hidden;
+}
+.founder-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=1920&q=80') center/cover no-repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+.founder-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+.founder-photo {
+  aspect-ratio: 3/4;
+  background: var(--white-05);
+  border: 1px dashed var(--white-15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-20);
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.6;
+}
+.founder-eyebrow {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 16px;
+}
+.founder-name {
+  font-family: var(--ff-display);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+.founder-role {
+  font-size: 14px;
+  color: var(--white-40);
+  margin-bottom: 28px;
+  font-weight: 400;
+}
+.founder-bio {
+  font-size: 15px;
+  color: var(--white-60);
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+.founder-bio strong { color: var(--white-90); font-weight: 500; }
+.founder-stats {
+  display: flex;
+  gap: 40px;
+}
+.founder-stat-val {
+  font-family: var(--ff-display);
+  font-size: clamp(24px, 2.5vw, 32px);
+  font-weight: 400;
+  color: var(--cyan);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.founder-stat-label {
+  font-size: 12px;
+  color: var(--white-40);
+  font-weight: 400;
+}
+
 /* ---- REVIEWS ---- */
 
 .reviews-section { background: var(--black); }
@@ -1200,6 +1286,9 @@ h1, h2, h3 { text-wrap: balance; }
 
 @media (max-width: 640px) {
   .nav-wa { display: none; }
+  .founder-grid { grid-template-columns: 1fr; text-align: center; }
+  .founder-photo { max-width: 280px; margin: 0 auto; aspect-ratio: 1; }
+  .founder-stats { justify-content: center; }
   .hero-cat { flex: 0 0 92%; min-width: 92%; }
   .fleet-grid { grid-template-columns: 1fr; gap: 12px; }
   .proof-inner { flex-wrap: wrap; justify-content: center; gap: 8px 12px; }
@@ -1586,6 +1675,35 @@ h1, h2, h3 { text-wrap: balance; }
         <div class="process-label">Profitez</div>
         <h3 class="process-name">Livraison a votre porte</h3>
         <p class="process-desc">Le vehicule arrive a votre hotel, villa ou aeroport. Assurance et assistance incluses. Vous roulez, on gere le reste.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="section founder-section" id="fondateur">
+  <div class="section-inner">
+    <div class="founder-grid rv">
+      <div class="founder-photo">Photo du<br>fondateur</div>
+      <div class="founder-info">
+        <p class="founder-eyebrow">Le fondateur</p>
+        <h2 class="founder-name">M. Gomez</h2>
+        <p class="founder-role">Fondateur &amp; Directeur — StreetMotors</p>
+        <p class="founder-bio">Gearhead depuis toujours, <strong>M. Gomez</strong> a cree StreetMotors pour partager sa passion des belles mecaniques avec ceux qui refusent de conduire un vehicule ordinaire. Issu du monde du sport automobile, il a constitue une <strong>flotte d'exception</strong> — des sportives aux SUV premium — et bati un service de location pensee pour les sensations fortes autant que pour le confort. Chaque vehicule est selectionne, entretenu et livre avec la meme exigence.</p>
+        <div class="founder-stats">
+          <div>
+            <div class="founder-stat-val">50+</div>
+            <div class="founder-stat-label">vehicules premium</div>
+          </div>
+          <div>
+            <div class="founder-stat-val">1 200+</div>
+            <div class="founder-stat-label">locations realisees</div>
+          </div>
+          <div>
+            <div class="founder-stat-val">4.8/5</div>
+            <div class="founder-stat-label">note moyenne</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
