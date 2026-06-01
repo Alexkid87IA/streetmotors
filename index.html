@@ -137,25 +137,31 @@ h1, h2, h3 { text-wrap: balance; }
 
 .nav-logo-accent { color: var(--cyan); }
 
-.nav-right {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 12px;
-}
+.nav-right { display: none; }
 
-.nav-phone {
-  font-family: var(--ff-mono);
-  font-size: 12px;
-  color: var(--white-60);
-  letter-spacing: 0.02em;
-  transition: color 0.2s;
+/* STICKY CTA BAR */
+.sticky-cta {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 150;
+  background: var(--cyan);
+  padding: 14px 24px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.4);
+  transform: translateY(100%);
+  animation: stickySlideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 1.5s forwards;
 }
-.nav-phone:hover { color: var(--cyan); }
-.nav-phone svg { width: 14px; height: 14px; }
+@keyframes stickySlideUp { to { transform: translateY(0); } }
+.sticky-cta svg { width: 18px; height: 18px; color: var(--black); }
+.sticky-cta-text {
+  font-family: var(--ff-body);
+  font-size: 15px; font-weight: 600;
+  color: var(--black);
+  letter-spacing: 0.01em;
+}
 
 /* FULLSCREEN NAV OVERLAY */
 .nav-overlay {
@@ -1152,7 +1158,6 @@ h1, h2, h3 { text-wrap: balance; }
   .reviews-feature { padding: 32px 24px; }
   .footer-top { grid-template-columns: 1fr; }
   .footer-bottom-inner { flex-direction: column; text-align: center; }
-  .nav-phone span { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1177,12 +1182,6 @@ h1, h2, h3 { text-wrap: balance; }
       </button>
     </div>
     <a href="#" class="nav-logo">Street<span class="nav-logo-accent">Motors</span></a>
-    <div class="nav-right">
-      <a href="tel:+33600000000" class="nav-phone">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.12.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0122 16.92z"/></svg>
-        06 00 00 00 00
-      </a>
-    </div>
   </div>
 </nav>
 
@@ -1795,6 +1794,12 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
   }
 })();
 </script>
+
+<!-- STICKY CTA -->
+<a href="tel:+33600000000" class="sticky-cta">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.12.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0122 16.92z"/></svg>
+  <span class="sticky-cta-text">Appelez-nous maintenant</span>
+</a>
 
 </body>
 </html>
